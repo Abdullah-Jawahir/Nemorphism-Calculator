@@ -1,0 +1,182 @@
+@import './utility';
+
+
+*{
+
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: large;
+    background-color: aliceblue;
+    
+}
+
+
+.container {
+
+    @include flexCenter;
+    min-height: 100vh;
+}
+
+.calculator {
+
+    width: 70%;
+    max-width: 400px;
+    max-height: max-content;
+    min-height: 300px;
+    min-width: 200px;
+    padding: 20px;
+    @include calculatorShadow;
+    border-radius: 10px;
+
+    .calc-output {
+
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        width: 100%;
+        @include afterClickShadow;
+        margin-bottom: 20px;
+        border-radius: 35px;
+
+        .output {
+
+            @include flexCenter;
+            width: fit-content;
+            height: 35px;
+            
+            
+        }
+
+        #num-one {
+
+            padding: 0 0 0 10px;
+        }
+
+        #operator {
+
+            padding: 0 5px;
+        }
+
+        
+        
+    }
+
+
+    .calc-keys {
+
+        display: grid;
+        grid-gap: 15px;
+        grid-template-areas: 
+        
+        "clear clear divide multiply"
+        "seven eight nine substract"
+        "four five six add"
+        "one two three add"
+        "zero doubleZero dot equal"
+        
+        
+        ;
+
+
+        .calc-key {
+
+            @include flexCenter;
+            height: 50px;
+            @include beforeClickShadow;
+            border-radius: 10px;
+            cursor: pointer;
+            color: rgba(77, 77, 77, 0.8);
+            
+
+            &:active {
+
+                @include afterClickShadow;
+            }
+        }
+
+
+        #key-clear {
+
+            grid-area: clear;
+        }
+        #key-divide {
+
+            grid-area: divide;
+        }
+        #key-multiply {
+
+            grid-area: multiply;
+        }
+        #key-substract {
+
+            grid-area: substract;
+        }
+        #key-add {
+
+            grid-area: add;
+            height: auto;
+        }
+        #key-equal {
+
+            grid-area: equal;
+        }
+        #key-dot {
+
+            grid-area: dot;
+        }
+        #key-1 {
+
+            grid-area: one;
+        }
+        #key-2 {
+
+            grid-area: two;
+        }
+        #key-3 {
+
+            grid-area: three;
+        }
+        #key-4 {
+
+            grid-area: four;
+        }
+        #key-5 {
+
+            grid-area: five;
+        }
+        #key-6 {
+
+            grid-area: six;
+        }
+        #key-7 {
+
+            grid-area: seven;
+        }
+        #key-8 {
+
+            grid-area: eight;
+        }
+        #key-9 {
+
+            grid-area: nine;
+        }
+        #key-0 {
+
+            grid-area: zero;
+        }
+        #key-00 {
+
+            grid-area: doubleZero;
+        }
+    }
+
+
+}
